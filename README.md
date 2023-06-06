@@ -26,6 +26,14 @@ With many entities involved in the authorization and settlement of a card transa
 * A-1-1) Prepare data for 3rd party usage
 * A-1-2) Secure sensitive data thought perpetual data pipelines
 
+## Example project
+
+### 1) https://github.com/san089/goodreads_etl_pipeline
+
+An end-to-end GoodReads Data Pipeline for Building Data Lake, Data Warehouse and Analytics Platform
+
+![](https://github.com/san089/goodreads_etl_pipeline/raw/master/docs/images/architecture.png)
+
 ## Reference
 
 * https://github.com/databricks-industry-solutions/esg-scoring
