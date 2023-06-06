@@ -2,11 +2,15 @@
 
 ## Infrastructure
 
-* Kubernetes engine
-* Apache Airflow slim-2.6.1-python3.10
-* ClickHouse storage
-* HBase storage
-* Email center
+| Title | Stack |
+|---:|:---|
+| Infrastructure | Kubernetes engine |
+| Data platform and orchestration | Apache Airflow slim-2.6.1-python3.10 |
+| Language stack | Python (data extractions and loading) |
+| Data Warehouse | ClickHouse |
+| Data Transformation | HBase |
+| Data lack | S3 |
+| Notifier | Email center |
 
 ## Scenarios 
 
@@ -33,6 +37,18 @@ With many entities involved in the authorization and settlement of a card transa
 An end-to-end GoodReads Data Pipeline for Building Data Lake, Data Warehouse and Analytics Platform
 
 ![](https://github.com/san089/goodreads_etl_pipeline/raw/master/docs/images/architecture.png)
+
+### 2) https://github.com/judeleonard/e-commerce_activity_tracking
+
+This project is aimed at leveraging data engineering to setup an ELT data pipeline to make informed decisions on an e-commerce website with their fact tables coming into the central data lake system(Amazon S3) on daily basis. These facts include:
+
+![](https://github.com/judeleonard/e-commerce_activity_tracking/raw/master/images/architecture.png)
+
+![](https://github.com/judeleonard/e-commerce_activity_tracking/blob/master/images/e_commerce_pipeline.png?raw=true)
+
+
+### 3) https://github.com/akashkatakam/INFO-7374-production-data-pipelines
+
 
 ## Reference
 
