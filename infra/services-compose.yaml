@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  # vsftpd service
+  ftp-server:
+    image: fauria/vsftpd
+    ports:
+      - 21:21
+      - 20:20
+      - 21100-21110:21100-21110
+    env_file:
+      - .env.ftp
+    restart: always
+
+  database:
+    image: postgres
+    ports:
+      - 5432:5432
+    restart: always
+    env_file:
+      - .env.database
+
+  object-storage:
+    image: bitnami/minio
+    ports:
+      - 9000:9000
+      - 9001:9001
+    volumes:
+      - /usr/minio/data:/data
+    env_file:
+      - .env.minio
