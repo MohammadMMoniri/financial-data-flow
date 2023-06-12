@@ -12,7 +12,8 @@ echo -e "AIRFLOW_UID=$(id -u)" > .env
 ### Initialize the database
 
 ```bash
-docker-compose up airflow-init
+docker-compose -f airflow-compose.yaml up airflow-init
+docker-compose -f services-compose.yaml up infra-init
 ```
 
 ### Start up all services
