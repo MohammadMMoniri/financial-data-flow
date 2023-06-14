@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS transaction(
+    ID SERIAL PRIMARY KEY,
+    amount INT NOT NULL,
+    payer_id INT NOT NULL,
+    payee_id INT NOT NULL,
+    datetime TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_payer FOREIGN KEY(payer_id) REFERENCES account(ID),
+    CONSTRAINT fk_payee FOREIGN KEY(payee_id) REFERENCES account(ID)
+);
