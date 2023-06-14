@@ -1,0 +1,22 @@
+version: '3.8'
+
+name: flask22
+
+services:
+  database:
+    image: postgres
+    ports:
+      - 54323:5432
+    restart: always
+
+  flask_service:
+    build: .
+    ports:
+      - 3000:3000
+    depends_on:
+      - database
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 10s
+      retries: 5
+      start_period: 5s
