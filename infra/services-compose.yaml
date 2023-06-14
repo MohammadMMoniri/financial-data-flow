@@ -21,7 +21,7 @@ services:
       - .env.database
 
   object-storage:
-    image: bitnami/minio
+    image: minio/minio
     ports:
       - 9000:9000
       - 9001:9001
@@ -29,3 +29,21 @@ services:
       - /usr/minio/data:/data
     env_file:
       - .env.minio
+  
+  # object-storage-config:
+  #   image: minio/mc
+  #   env_file: 
+  #     - .env.minio
+  #   entrypoint: >
+  #     /bin/sh -c "
+  #     /usr/bin/mc config host add myminio ${MINIO_HOST}  ${MINIO_ROOT_USER} ${MINIO_ROOT_PASSWORD};
+  #     /usr/bin/mc admin user add obj_con ${MINIO_BANK_USER} ${MINIO_BANK_SECRET};
+  #     "
+  #   # #   - mc obj_con set minio ${MINIO_HOST} ${MINIO_ROOT_USER} ${MINIO_ROOT_PASSWORD}
+  #   # script: 
+  #   #   - mc mb obj_con ${BANK_BUCKET_NAME}
+  #   #   # - mc admin user add obj_con ${MINIO_BANK_USER} ${MINIO_BANK_SECRET}
+  #   #   # - mc mb obj_con bank/dailyReports
+  #   #   # - mc mb 
+  #   depends_on:
+  #     - object-storage
