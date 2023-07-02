@@ -8,7 +8,7 @@ To initialize a database using Goose project, you can follow these steps:
 
 `export GOOSE_DRIVER=postgres`
 
-`export GOOSE_DBSTRING="postgresql://firstuser:password@localhost:54323/flask_db"`
+`export GOOSE_DBSTRING="postgresql://firstuser:password@localhost:54323)/flask_db"`
  - Check Goose status using the following command:
 
 `goose status`

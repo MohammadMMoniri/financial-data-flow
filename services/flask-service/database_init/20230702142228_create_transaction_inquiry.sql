@@ -4,7 +4,7 @@
 
 CREATE TABLE IF NOT EXISTS transaction_inquiry(
     ID SERIAL PRIMARY KEY,
-    trace_number VARCHAR(255) NULL,
+    trace_number VARCHAR(32) NULL,
     status STATUS NOT NULL,
     issuer ISSUER_TYPE NOT NULL,
     datetime TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
