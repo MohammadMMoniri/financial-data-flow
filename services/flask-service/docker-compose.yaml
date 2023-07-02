@@ -1,6 +1,6 @@
-version: '3.8'
+version: '3.3'
 
-name: flask22
+# name: flask22
 
 services:
   database:
@@ -8,6 +8,8 @@ services:
     ports:
       - 54323:5432
     restart: always
+    env_file:
+      - .env
 
   flask_service:
     build: .
